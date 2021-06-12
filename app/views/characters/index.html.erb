@@ -18,6 +18,12 @@
     <% end %>
 </table>
 
+<% if @character.errors %>
+    <% @character.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>
+<% end %>
+
 <%= form_with model: @character, url: "/characters" do |f| %>
     <%= f.text_field :name %><br>
     <%= f.text_field :age %><br>
