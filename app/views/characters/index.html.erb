@@ -17,3 +17,11 @@
     </tr> 
     <% end %>
 </table>
+
+<%= form_with model: @character, url: "/characters" do |f| %>
+    <%= f.text_field :name %><br>
+    <%= f.text_field :age %><br>
+    <%= f.text_field :gender %><br>
+    <%= f.text_field :voice_acter %><br>
+    <%= f.submit "送信" %>
+<% end %>
