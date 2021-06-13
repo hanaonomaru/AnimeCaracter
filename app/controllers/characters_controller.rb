@@ -5,10 +5,11 @@ class CharactersController < ApplicationController
   end
 
   def create
-    @character = AnimeCharacter.create!(character_params)
+    @character = AnimeCharacter.new(character_params)
     if @character.save
       redirect_to action: :index
     else
+      @characters = AnimeCharacter.all
       render :index
     end
   end
