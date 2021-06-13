@@ -12,7 +12,7 @@
     <tr>
         <td><%= v.name %></td>
         <td><%= v.age %></td>
-        <td><%= v.gender %></td>
+        <td><%= v.gender.value %></td>
         <td><%= v.voice_acter %></td>
     </tr> 
     <% end %>
@@ -27,7 +27,7 @@
 <%= form_with model: @character, url: "/characters" do |f| %>
     <%= f.text_field :name %><br>
     <%= f.text_field :age %><br>
-    <%= f.text_field :gender %><br>
+    <%= f.select :gender, @genders.map { |g| [g.value, g.id] }, {include_blank: '選択してください'} %><br>
     <%= f.text_field :voice_acter %><br>
     <%= f.submit "送信" %>
 <% end %>

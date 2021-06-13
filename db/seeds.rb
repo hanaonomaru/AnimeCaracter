@@ -6,9 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+Gender.create!(
+    id: 1,
+    value: "男性",
+)
+Gender.create!(
+    id: 2,
+    value: "女性",
+)
+
 AnimeCharacter.create!(
     name: "工藤新一",
     age: 17,
-    gender: "男性",
+    gender_id: 1,
     voice_acter: "山口勝平",
 )
