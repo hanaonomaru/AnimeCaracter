@@ -15,10 +15,11 @@ ActiveRecord::Schema.define(version: 2021_06_13_084937) do
   create_table "anime_characters", force: :cascade do |t|
     t.string "name", null: false
     t.integer "age", null: false
-    t.string "gender", null: false
+    t.integer "gender_id", null: false
     t.string "voice_acter", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["gender_id"], name: "index_anime_characters_on_gender_id"
   end
 
   create_table "genders", force: :cascade do |t|
